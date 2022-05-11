@@ -21,7 +21,7 @@ public class UserDetailsDto {
         this.surname = user.getSurname();
         this.position = user.getPosition();
         this.email = user.getEmail();
-        this.salary = user.getSalary();;
+        this.salary = user.getSalary();
         this.dob = user.getDob();
     }
 }

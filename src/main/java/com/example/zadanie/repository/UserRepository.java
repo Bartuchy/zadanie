@@ -25,25 +25,25 @@ public class UserRepository {
                     "name2",
                     "surname2",
                     "mail2@mail.com",
-                    "position12",
+                    "employee",
                     4000,
-                    LocalDate.parse("2001-08-20")),
+                    LocalDate.parse("1990-08-20")),
             new User(
                     3L,
                     "name3",
                     "surname3",
                     "mail3@mail.com",
-                    "position3",
+                    "manager",
                     6000,
-                    LocalDate.parse("2002-08-20")),
+                    LocalDate.parse("1990-08-20")),
             new User(
                     4L,
                     "name4",
                     "surname4",
                     "mail4@mail.com",
-                    "position4",
+                    "director",
                     12000,
-                    LocalDate.parse("2004-08-20"))
+                    LocalDate.parse("1990-08-20"))
     ));
 
     private Long next_id = (long) users.size() + 1;
@@ -81,5 +81,4 @@ public class UserRepository {
         }
         return false;
     }
-
 }

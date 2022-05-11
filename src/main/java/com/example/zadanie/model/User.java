@@ -22,7 +22,7 @@ public class User {
         this.surname = addUserDto.getSurname();
         this.position = addUserDto.getPosition();
         this.email = addUserDto.getEmail();
-        this.salary = addUserDto.getSalary();;
+        this.salary = addUserDto.getSalary();
         this.dob = addUserDto.getDob();
     }
 }

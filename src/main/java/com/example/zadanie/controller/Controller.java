@@ -3,7 +3,6 @@ package com.example.zadanie.controller;
 import com.example.zadanie.dto.AddUserDto;
 import com.example.zadanie.dto.UserDetailsDto;
 import com.example.zadanie.dto.UserGeneralDto;
-import com.example.zadanie.model.User;
 import com.example.zadanie.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
