@@ -1,11 +1,11 @@
 package com.example.zadanie.service;
 
+import com.example.zadanie.dto.AddUserDto;
 import com.example.zadanie.dto.UserDetailsDto;
 import com.example.zadanie.dto.UserGeneralDto;
 import com.example.zadanie.exception.UserNotFoundException;
 import com.example.zadanie.model.User;
 import com.example.zadanie.repository.UserRepository;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -30,6 +30,18 @@ public class UserService {
                 .orElseThrow(UserNotFoundException::new);
 
         return new UserDetailsDto(user);
+    }
+
+    public void addNewUser(AddUserDto addUserDto) {
+        User user = new User(addUserDto);
+        userRepository.save(user);
+    }
+
+    public void removeUserById(Long id) {
+        if (userRepository.delete(id)) {
+            return;
+        }
+        throw new UserNotFoundException();
     }
 
 }

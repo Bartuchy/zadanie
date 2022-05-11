@@ -1,6 +1,6 @@
 package com.example.zadanie.model;
 
-import com.example.zadanie.dto.UserGeneralDto;
+import com.example.zadanie.dto.AddUserDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -16,4 +16,13 @@ public class User {
     private String email;
     private int salary;
     private LocalDate dob;
+
+    public User(AddUserDto addUserDto) {
+        this.name = addUserDto.getName();
+        this.surname = addUserDto.getSurname();
+        this.position = addUserDto.getPosition();
+        this.email = addUserDto.getEmail();
+        this.salary = addUserDto.getSalary();;
+        this.dob = addUserDto.getDob();
+    }
 }

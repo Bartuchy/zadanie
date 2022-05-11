@@ -1,15 +1,14 @@
 package com.example.zadanie.controller;
 
+import com.example.zadanie.dto.AddUserDto;
 import com.example.zadanie.dto.UserDetailsDto;
 import com.example.zadanie.dto.UserGeneralDto;
 import com.example.zadanie.model.User;
 import com.example.zadanie.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -31,5 +30,15 @@ public class Controller {
         return ResponseEntity.ok(userDetailsDto);
     }
 
+    @PostMapping("/add")
+    public ResponseEntity<AddUserDto> addNewUser(@RequestBody AddUserDto addUserDto) {
+        userService.addNewUser(addUserDto);
+        return new ResponseEntity<>(addUserDto, HttpStatus.CREATED);
+    }
 
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Void> removeUserById(@PathVariable Long id) {
+        userService.removeUserById(id);
+        return ResponseEntity.noContent().build();
+    }
 }
